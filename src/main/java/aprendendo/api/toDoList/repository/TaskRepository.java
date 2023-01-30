@@ -12,5 +12,7 @@ import aprendendo.api.toDoList.model.Task;
 public interface TaskRepository extends JpaRepository<Task,Long>{
     Optional<Task> findByUserId(long userId);
 
+    Optional<Task> findByIdAndUserId(long id,long userId);
+
     List<Task> findAllByUserId(long userId);
 }
