@@ -44,4 +44,9 @@ public class TaskController {
         return ResponseEntity.ok(taskService.completeTask(user,id));
     }
 
+    @GetMapping("/my/completed")
+    public ResponseEntity<List<Task>> findCompletedTasks(@AuthenticationPrincipal User user) {
+        return ResponseEntity.ok(taskService.findCompletedTasks(user));
+    }
+
 }

@@ -42,4 +42,8 @@ public class TaskService {
         }
         throw new RuntimeException("Task not found");
     }
+
+    public List<Task> findCompletedTasks(User user) {
+        return taskRepository.findAllByUserIdAndCompleted(user.getId(), true);
+    } 
 }
